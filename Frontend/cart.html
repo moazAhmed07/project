@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Cave — Cart</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+</head>
+<body>
+
+    <div class="cart-page">
+        <div class="slide-curtain"></div>
+        <div class="overlay"></div>
+
+        <!-- HEADER (shared) -->
+        <div class="header-area">
+            <div class="logo"><a href="landing.html">Football Cave</a></div>
+            <div class="hamburger js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="links js-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link">
+                    <button class="cart-btn" type="button" aria-label="View cart">
+                        🛒 <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <main class="cart-main">
+            <section class="cart-hero">
+                <h1>Your Cart</h1>
+                <p>Review your selected football gear before checkout.</p>
+            </section>
+
+            <section class="cart-layout">
+                <div class="cart-items" id="cartItems"></div>
+
+                <aside class="cart-summary" id="cartSummary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Items</span>
+                        <span id="cartItemsCount">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+
+                    <button type="button" class="btn-checkout" id="btnCheckout">Proceed to Checkout</button>
+                    <button type="button" class="btn-continue" id="btnContinue">Continue Shopping</button>
+                </aside>
+            </section>
+
+            <div class="cart-empty" id="cartEmpty" hidden>
+                <h2>Your cart is empty</h2>
+                <p>Add some jerseys, boots, or gear from the products page, then come back here.</p>
+                <a href="products.html" class="btn-empty-go">Browse products</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <span>© 2026 Football Cave. All rights reserved.</span>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="dataHtml/login.html">Login</a>
+            <a href="dataHtml/signup.html">Sign Up</a>
+        </div>
+    </footer>
+
+    <!-- Cart toast: messages for quantity change / remove (same style as products page) -->
+    <div class="cart-toast" id="cartToast" role="status" aria-live="polite" aria-label="Cart notification">
+        <span class="cart-toast-icon" aria-hidden="true">✓</span>
+        <span class="cart-toast-message"></span>
+        <div class="cart-toast-loading-bar" aria-hidden="true"></div>
+    </div>
+
+    <script src="js/master.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

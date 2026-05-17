@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Cave — Products</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+</head>
+<body>
+
+    <div class="products-page">
+        <div class="slide-curtain"></div>
+        <div class="overlay"></div>
+
+        <!-- HEADER (shared) -->
+        <div class="header-area">
+            <div class="logo"><a href="landing.html">Football Cave</a></div>
+            <div class="hamburger js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="links js-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link">
+                    <button class="cart-btn" type="button" aria-label="View cart">
+                        🛒 <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <main class="products-main">
+            <!-- Hero / Intro -->
+            <section class="products-hero">
+                <div class="products-hero-text">
+                    <h1>Football Gear Store</h1>
+                    <p>
+                        Explore match-ready jerseys, boots, balls, and training gear. 
+                        Use the filters to quickly find the right product for your game.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Filters / Controls -->
+            <section class="products-controls">
+                <form id="productsFilters" class="products-filters" autocomplete="off">
+                    <div class="filter-group filter-search">
+                        <label for="searchInput">Search</label>
+                        <input type="text" id="searchInput" placeholder="Search for boots, jerseys, balls..." />
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="categorySelect">Category</label>
+                        <select id="categorySelect">
+                            <option value="">All categories</option>
+                            <option value="Jersey">Jerseys</option>
+                            <option value="Boots">Football boots</option>
+                            <option value="Ball">Footballs</option>
+                            <option value="Training">Training equipment</option>
+                            <option value="Accessory">Accessories</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="brandSelect">Brand</label>
+                        <select id="brandSelect">
+                            <option value="">All brands</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Puma">Puma</option>
+                            <option value="Umbro">Umbro</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group filter-price">
+                        <label>Price range ($)</label>
+                        <div class="price-inputs">
+                            <input type="number" id="priceMin" placeholder="Min" min="0">
+                            <span>–</span>
+                            <input type="number" id="priceMax" placeholder="Max" min="0">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sizeSelect">Size</label>
+                        <select id="sizeSelect">
+                            <option value="">All sizes</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="5">Ball Size 5</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="ratingSelect">Min rating</label>
+                        <select id="ratingSelect">
+                            <option value="">Any</option>
+                            <option value="3">3★ & up</option>
+                            <option value="4">4★ & up</option>
+                            <option value="4.5">4.5★ & up</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group filter-sort">
+                        <label for="sortSelect">Sort by</label>
+                        <select id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low → High</option>
+                            <option value="price-desc">Price: High → Low</option>
+                            <option value="newest">Newest</option>
+                            <option value="bestseller">Best selling</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Products + Details -->
+            <section class="products-layout">
+                <div class="products-list" id="productsList" aria-live="polite"></div>
+
+                <aside class="product-details" id="productDetails">
+                    <div class="details-placeholder">
+                        <h2>Product details</h2>
+                        <p>Select a product card to view full description, sizes, and stock info.</p>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- Empty state -->
+            <div class="products-empty" id="productsEmpty" hidden>
+                <h2>No products found</h2>
+                <p>Try adjusting your search text, filters, or price range.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <span>© 2026 Football Cave. All rights reserved.</span>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="dataHtml/login.html">Login</a>
+            <a href="dataHtml/signup.html">Sign Up</a>
+        </div>
+    </footer>
+
+    <!-- Cart toast: message shown when "Add to cart" is clicked (top of screen, with loading bar) -->
+    <div class="cart-toast" id="cartToast" role="status" aria-live="polite" aria-label="Cart notification">
+        <span class="cart-toast-icon" aria-hidden="true">✓</span>
+        <span class="cart-toast-message"></span>
+        <div class="cart-toast-loading-bar" aria-hidden="true"></div>
+    </div>
+
+    <script src="js/master.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

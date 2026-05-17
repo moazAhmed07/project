@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Cave — Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/data/signup.css">
+</head>
+<body>
+
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+
+    <div class="signup-wrapper">
+
+        <!-- Form Panel -->
+        <div class="form-panel">
+            <h1>CREATE ACCOUNT</h1>
+            <p class="subtitle">Join thousands of football fans today</p>
+
+            <form id="signupForm" novalidate>
+
+                <!-- Name row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="firstName" placeholder="John" />
+                            <span class="input-icon">👤</span>
+                        </div>
+                        <span class="field-error" id="firstNameError">Required</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="lastName" placeholder="Doe" />
+                            <span class="input-icon">👤</span>
+                        </div>
+                        <span class="field-error" id="lastNameError">Required</span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="you@example.com" />
+                        <span class="input-icon">✉</span>
+                    </div>
+                    <span class="field-error" id="emailError">Enter a valid email</span>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="••••••••" />
+                        <button type="button" class="input-icon" id="togglePassword">👁</button>
+                    </div>
+                    <!-- Strength bar -->
+                    <div class="strength-bar">
+                        <div class="strength-segment" id="seg1"></div>
+                        <div class="strength-segment" id="seg2"></div>
+                        <div class="strength-segment" id="seg3"></div>
+                        <div class="strength-segment" id="seg4"></div>
+                    </div>
+                    <p class="strength-label" id="strengthLabel"></p>
+                    <span class="field-error" id="passwordError">Min 8 characters</span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="••••••••" />
+                        <button type="button" class="input-icon" id="toggleConfirm">👁</button>
+                    </div>
+                    <span class="field-error" id="confirmError">Passwords do not match</span>
+                </div>
+
+                <!-- Terms -->
+                <div class="terms">
+                    <input type="checkbox" id="terms" />
+                    <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </div>
+
+                <div class="error-msg" id="errorMsg">
+                    ⚠ Please fix the errors above before continuing.
+                </div>
+
+                <button type="submit" class="btn-signup">JOIN THE CAVE</button>
+            </form>
+
+            <div class="divider"><span>or</span></div>
+
+            <button class="btn-google">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Sign up with Google
+            </button>
+
+            <p class="login-link">Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <div class="brand">
+                <div class="brand-icon">⚽</div>
+                <span class="brand-name">Football Cave</span>
+            </div>
+
+            <div class="info-content">
+                <h2>JOIN THE <span>SQUAD</span><br>TODAY.</h2>
+                <div class="perks">
+                    <div class="perk">
+                        <div class="perk-icon">🚚</div>
+                        <div class="perk-text">
+                            <strong>Free Shipping</strong>
+                            <span>Free delivery on all orders over $50 worldwide</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">⭐</div>
+                        <div class="perk-text">
+                            <strong>Exclusive Member Deals</strong>
+                            <span>Early access to sales and member-only discounts</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🏆</div>
+                        <div class="perk-text">
+                            <strong>Loyalty Rewards</strong>
+                            <span>Earn points on every purchase and redeem for gear</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🔄</div>
+                        <div class="perk-text">
+                            <strong>Easy Returns</strong>
+                            <span>30-day hassle-free returns on all products</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-footer">
+                <span>🔒</span>
+                <p>Your data is safe with us. We never share your personal information with third parties.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/signup.js"></script>
+</body>
+</html>

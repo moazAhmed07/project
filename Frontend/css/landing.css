@@ -1,0 +1,169 @@
+:root {
+    --main-color: #FAF7F3;
+    --second-color: #F0E4D3;
+    --third-color: #DCC5B2;
+    --forth-color: #D9A299;
+    --gold-color: #ffd700;
+}
+/* Start Landing Page */
+    .landing-page {
+        min-height: 100vh;
+        background-image: url('../imgs/3.jpg');
+        background-size: cover;       /* fills the entire container */
+        background-position: center;  /* keeps the center in focus */
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .landing-page .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #00000094;
+        left: 0;
+        top: 0;
+        transition: opacity 1s ease-in-out;
+        z-index: 1;
+    }
+
+    .slide-curtain {
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #0d3b38;  /* match your theme color */
+        z-index: 1;
+        transition: width 0.6s ease-in-out;
+}
+
+    .slide-curtain.open {
+        width: 100%;
+}
+
+    .slide-curtain.close {
+        width: 0%;
+        left: auto;
+        right: 0;
+}
+    .introduction-text{
+        position: absolute;
+        color: var(--main-color);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .introduction-text p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .introduction-text #login-btn {
+        padding: 10px 20px;
+        background-color: hsl(14, 100%, 57%);
+        color: var(--main-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: 0.3s ease-in-out;
+    }
+    .introduction-text #login-btn a {
+        color: var(--main-color);
+        text-decoration: none;
+    }
+    .introduction-text #login-btn:hover {
+        background-color: hsl(14, 100%, 47%);
+    }
+    .introduction-text #login-btn:active {
+        background-color: hsl(14, 100%, 37%);
+    }
+    .introduction-text #products-link {
+        color: var(--main-color);
+        text-decoration: none;
+        margin-left: 10px;
+        transition: 0.3s ease-in-out;
+    }
+    .introduction-text #products-link:hover {
+        opacity: 0.8;
+        border-bottom: 2px solid var(--main-color);
+    }
+    .introduction-text #products-link:active {
+        opacity: 0.7;
+        border-bottom: 3px solid var(--main-color);
+    }
+/* End Landing Page */
+
+
+/* ===================== */
+/*     MEDIA QUERIES     */
+/* ===================== */
+
+/* Large Desktop → 1280px and above — no changes needed, base styles handle it */
+
+/* Desktop → up to 1280px */
+@media (max-width: 1280px) {
+    .introduction-text {
+        width: 65%;
+    }
+}
+
+/* Small Desktop / Large Tablet Landscape → up to 1024px */
+@media (max-width: 1024px) {
+    .introduction-text {
+        width: 75%;
+    }
+}
+
+/* Tablet → up to 768px */
+@media (max-width: 768px) {
+    .introduction-text {
+        width: 85%;
+    }
+    .introduction-text p {
+        font-size: 15px;
+    }
+    .introduction-text #login-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Small Mobile → up to 414px */
+@media (max-width: 414px) {
+    .introduction-text {
+        width: 92%;
+    }
+    .introduction-text h1 {
+        font-size: 22px;
+    }
+    .introduction-text p {
+        font-size: 12px;
+    }
+    .introduction-text #login-btn {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+    .introduction-text #products-link {
+        font-size: 12px;
+        margin-left: 6px;
+    }
+}
+
+/* Very Small Mobile → up to 320px */
+@media (max-width: 320px) {
+    .introduction-text {
+        width: 95%;
+    }
+    .introduction-text h1 {
+        font-size: 20px;
+    }
+    .introduction-text p {
+        font-size: 11px;
+    }
+    .introduction-text #login-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+/* End Media Queries */

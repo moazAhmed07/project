@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Cave — Checkout</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+</head>
+<body>
+
+    <div class="checkout-page">
+        <div class="slide-curtain"></div>
+        <div class="overlay"></div>
+
+        <!-- HEADER (shared) -->
+        <div class="header-area">
+            <div class="logo"><a href="landing.html">Football Cave</a></div>
+            <div class="hamburger js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="links js-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link">
+                    <button class="cart-btn" type="button" aria-label="View cart">
+                        🛒 <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <main class="checkout-main">
+            <section class="checkout-hero">
+                <h1>Checkout</h1>
+                <p>Enter your details, choose payment, and confirm your Football Cave order.</p>
+            </section>
+
+            <section class="checkout-layout">
+                <!-- Left: Shipping + Payment form -->
+                <form id="checkoutForm" class="checkout-form" novalidate>
+                    <h2>Shipping information</h2>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="fullName">Full name <span>*</span></label>
+                            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="John Doe">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone number <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+1 555 123 4567">
+                        </div>
+
+                        <div class="field field-full">
+                            <label for="address">Shipping address <span>*</span></label>
+                            <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="Street, building, apartment">
+                        </div>
+
+                        <div class="field">
+                            <label for="city">City <span>*</span></label>
+                            <input type="text" id="city" name="city" required placeholder="City">
+                        </div>
+
+                        <div class="field">
+                            <label for="postalCode">Postal code <span>*</span></label>
+                            <input type="text" id="postalCode" name="postalCode" required placeholder="Postal / ZIP">
+                        </div>
+                    </div>
+
+                    <h2>Payment</h2>
+
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="card" checked>
+                            <span>Credit / Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="cod">
+                            <span>Cash on Delivery</span>
+                        </label>
+                    </div>
+
+                    <div class="payment-card" id="cardFields">
+                        <div class="field field-full">
+                            <label for="cardName">Name on card <span>*</span></label>
+                            <input type="text" id="cardName" name="cardName" required placeholder="As shown on card">
+                        </div>
+                        <div class="field field-full">
+                            <label for="cardNumber">Card number <span>*</span></label>
+                            <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" autocomplete="cc-number" required placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="field">
+                            <label for="cardExpiry">Expiry (MM/YY) <span>*</span></label>
+                            <input type="text" id="cardExpiry" name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" required placeholder="08/28">
+                        </div>
+                        <div class="field">
+                            <label for="cardCvc">CVC <span>*</span></label>
+                            <input type="password" id="cardCvc" name="cardCvc" inputmode="numeric" autocomplete="cc-csc" required placeholder="123">
+                        </div>
+                    </div>
+
+                    <div class="field field-full">
+                        <label for="orderNotes">Order notes (optional)</label>
+                        <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Notes for delivery, gate code, etc."></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <p class="form-hint">By placing your order, you agree to our Terms of Service and Privacy Policy.</p>
+                        <button type="submit" id="btnPlaceOrder" class="btn-place-order">
+                            Place order securely
+                        </button>
+                        <p class="form-error" id="formError" aria-live="polite"></p>
+                    </div>
+                </form>
+
+                <!-- Right: Order summary -->
+                <aside class="checkout-summary" id="checkoutSummary">
+                    <h2>Order summary</h2>
+                    <div id="summaryItems" class="summary-items"></div>
+
+                    <div class="summary-rows">
+                        <div class="summary-row">
+                            <span>Items</span>
+                            <span id="summaryItemsCount">0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="summaryShipping">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="summaryTax">$0.00</span>
+                        </div>
+                        <div class="summary-row summary-total">
+                            <span>Total</span>
+                            <span id="summaryTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <p class="summary-note" id="summaryNote"></p>
+                </aside>
+            </section>
+
+            <!-- Empty / redirect state if no items -->
+            <section class="checkout-empty" id="checkoutEmpty" hidden>
+                <h2>Your cart is empty</h2>
+                <p>Add some jerseys, boots, or gear to your cart before checking out.</p>
+                <a href="products.html" class="btn-empty-go">Browse products</a>
+            </section>
+
+            <!-- Confirmation after successful order -->
+            <section class="checkout-confirmation" id="checkoutConfirmation" hidden>
+                <div class="confirmation-card">
+                    <div class="confirmation-icon">✓</div>
+                    <h2>Order confirmed!</h2>
+                    <p id="confirmationMessage">
+                        Thank you for your purchase. Your order has been placed successfully.
+                    </p>
+                    <p class="confirmation-order-id">
+                        Order number: <span id="orderIdText"></span>
+                    </p>
+                    <div class="confirmation-actions">
+                        <a href="products.html" class="btn-primary">Continue shopping</a>
+                        <a href="landing.html" class="btn-secondary">Back to home</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <span>© 2026 Football Cave. All rights reserved.</span>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="dataHtml/login.html">Login</a>
+            <a href="dataHtml/signup.html">Sign Up</a>
+        </div>
+    </footer>
+
+    <script src="js/master.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
+
